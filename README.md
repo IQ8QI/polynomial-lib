@@ -14,9 +14,18 @@ Get polynomial result for given value</br>
 `double result = my_poly.get_value(3);`</br>
 assigns 108 to result
 
-Add two polynomials</br>
+Add polynomials</br>
 `poly result = poly1 + poly2;`
+`poly result = poly1 + 4`
 
-Substract two polynomials</br>
+Substract polynomials</br>
 `poly result = poly1 - poly2;`
+`poly result = poly1 - 8;`
 
+Multiply polynomials</br>
+`poly result = poly1 * poly2`</br>
+`poly result = pol1 * 3`
+
+Divide polynomials</br>
+`poly result = poly1 / poly2`</br>
+`poly result = poly1 / 5`</br>
