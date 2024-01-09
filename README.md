@@ -11,7 +11,7 @@ Create new polynomial</br>
 poly::poly my_poly = poly::poly(3, 8, 9);
 //my_poly holds polynomial 3+8x+9x^2
 ```
-Show how my polynomial looks
+Show how polynomial looks
 ```
 poly::poly my_poly = poly::poly(3, 8, 9);
 cout << my_poly.show() << endl;
@@ -40,7 +40,7 @@ poly::poly my_poly = poly::special_poly(-2, vec);
 
 Get polynomial result for given argument</br>
 ```
-poly::poly my_poly = poly::poy(8, -2, 7);
+poly::poly my_poly = poly::poly(8, -2, 7);
 double result = my_poly.get_value(3);
 //result holds value 65
 ```
