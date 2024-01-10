@@ -11,11 +11,17 @@ Create new polynomial</br>
 poly::poly my_poly = poly::poly(3, 8, 9);
 //my_poly holds polynomial 3+8x+9x^2
 ```
-Show how polynomial looks
+Create string showing how polynomial looks
 ```
 poly::poly my_poly = poly::poly(3, 8, 9);
 cout << my_poly.show() << endl;
-//returns string "3+8x+9x^2"
+//returns string "3+8x+9x^(2)"
+```
+Create polynomial from string formated like result of *show()*
+```
+string text = "2*x^(-5)-3*x^(3)";
+poly my_poly = poly.read(text);
+//my_poly holds poly ready to be used
 ```
 Create new polynomial when lowest power of x is not 0 using special_poly(*lowest power*, *values*...)
 ```
