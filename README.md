@@ -65,14 +65,14 @@ poly::poly result = poly1 - 8;
 
 Multiply polynomials</br>
 ```
-poly::poly result = poly1 * poly2
-poly::poly result = pol1 * 3
+poly::poly result = poly1 * poly2;
+poly::poly result = pol1 * 3;
 ```
 
 Divide polynomials</br>
 ```
-poly::poly result = poly1 / poly2
-poly::poly result = poly1 / 5
+poly::poly result = poly1 / poly2;
+poly::poly result = poly1 / 5;
 ```
 
 Create polynomial derivative</br>
