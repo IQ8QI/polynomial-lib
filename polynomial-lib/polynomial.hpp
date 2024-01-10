@@ -45,7 +45,7 @@ namespace poly{
                 poly operator*(poly other);
                 poly operator*(double other);
 
-                //Divide poynomial with something
+                //Divide polynomial with something
                 poly operator/(poly other);
                 poly operator/(double other);
 
