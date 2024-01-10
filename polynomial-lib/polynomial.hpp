@@ -1,5 +1,5 @@
-#ifndef POLYNOMIAL
-#define POLYNOMIAL
+#ifndef POLYNOMIAL_HPP
+#define POLYNOMIAL_HPP
 
 #include <vector>
 #include <string>
@@ -18,8 +18,17 @@ namespace poly{
                 //Create polynomial using vector<double>
                 poly(vector<double> values);
 
+                //Create polynomial with non-zero base
+                poly(int base, double values...);
+
+                //Create polynomial with non-zero base and vector
+                poly(int base, vector<double> values);
+
                 //Return text representation of given polynomial
                 string show();
+
+                //Create polynomial from string formated like result of show()
+                static poly read(string input);
 
                 //Calculate value of polynomial for given argument
                 double get_value(double argument);
@@ -46,12 +55,6 @@ namespace poly{
                 //Calculate integral of polynomial
                 void integral();
         };
-
-        //Create polynomial with non-zero base
-        poly special_poly(int base, double values...);
-
-        //Create polynomial with non-zero base and vector
-        poly special_poly(int base, vector<double> values);
 }
 
-#endif
+#endif //POLYNOMIAL_HPP
