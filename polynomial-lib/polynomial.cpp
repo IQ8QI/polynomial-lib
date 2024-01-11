@@ -1,34 +1,19 @@
-#include <cstdarg>
+#include <cmath>
 
 #include "polynomial.hpp"
 
 using namespace std;
 
-//Create polynomial using just numbers
-//template<typename... double>
-poly::poly::poly(double arguments...){
-        va_list args;
-        va_start(args, arguments);
-
-        size_t arg_no = sizeof(arguments);
-        for(size_t i = 0; i < arg_no; i++){
-                values[i] = va_arg(args, double);
-        }
-
-        va_end(args);
-}
-
 //Create polynomial using vector<double>
 poly::poly::poly(vector<double> arguments){
         values = arguments;
 }
-/*
-//Create polynomial with non-zero base
-poly::poly::poly(int base, double values...);
 
 //Create polynomial with non-zero base and vector
-poly::poly::poly(int base, vector<double> values);
-*/
+poly::poly::poly(vector<double> arguments, int lowest_power){
+        values = arguments;
+        base = lowest_power;
+}
 
 //Return text representation of given polynomial
 string poly::poly::show(){
@@ -55,10 +40,18 @@ string poly::poly::show(){
 /*
 //Create polynomial from string formated like result of show()
 static poly read(string input);
+*/
 
 //Calculate value of polynomial for given argument
-double poly::get_value(double argument);
+double poly::get_value(double argument){
+        double result = 0;
+        for(size_t i = 0; i < values.size(); i++){
+                result += values[i] * pow(argument, static_cast<int>(i) + base);
+        }
+        return result;
+}
 
+/*
 //Add polynomial with something
 poly poly::operator+(poly other);
 poly poly::operator+(double other);

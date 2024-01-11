@@ -8,8 +8,12 @@ After that You can simply do #include "libs/polynomial.hpp" to make library work
 # Usage and features
 Create new polynomial</br>
 ```
-poly::poly my_poly = poly::poly(3, 8, 9);
+poly::poly my_poly = poly::poly({3, 8, 9});
 //my_poly holds polynomial 3+8x+9x^2
+vector<double> vec = {5, 0, 4, -7};
+my_poly = poly::poly(vec);
+//my_poly holds polynomial 5+4x^2-7x^3
+
 ```
 Create string showing how polynomial looks
 ```
@@ -17,30 +21,21 @@ poly::poly my_poly = poly::poly(3, 8, 9);
 cout << my_poly.show() << endl;
 //returns string "3+8x+9x^(2)"
 ```
+
 Create polynomial from string formated like result of *show()*
 ```
 string text = "2*x^(-5)-3*x^(3)";
 poly my_poly = poly.read(text);
 //my_poly holds poly ready to be used
 ```
-Create new polynomial when lowest power of x is not 0 using special_poly(*lowest power*, *values*...)
+
+Create new polynomial when lowest power of x is not 0 using poly(*lowest power*, {*values*})
 ```
-poly::poly my_poly = poly::special_poly
-(-6, 4, 0, 0, 3, 0, 0, 0, 0, 8);
+poly::poly my_poly = poly::poly
+(-6, {4, 0, 0, 3, 0, 0, 0, 0, 8});
 //my_poly now holds 4x^(-6)+3x^(-3)+8x^2
-```
-
-Create new polynomial from vector\<double\>
-```
 vector<double> vec = {5, 0, 4, -7};
-poly::poly my_poly = poly::poly(vec);
-//my_poly holds polynomial 5+4x^2-7x^3
-```
-
-Create new polynomial from vector\<double\> when lowest power of x is not 0 using special_poly(*lowest power*, *vector*)
-```
-vector<double> vec = {5, 0, 4, -7};
-poly::poly my_poly = poly::special_poly(-2, vec);
+my_poly = poly::poly(-2, vec);
 //my_poly holds polynomial  5x^(-2)+4-7x
 ```
 
@@ -82,6 +77,7 @@ poly::poly poly1 = poly(5, 9, -13);
 poly1 = poly1.derivative();
 //poly1 now holds 9-26x
 ```
+
 Create integral of polynomial</br>
 ```
 poly::poly my_poly = poly::poly(2, -4, 5, 3);

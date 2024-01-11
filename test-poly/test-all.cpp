@@ -16,8 +16,8 @@ bool assert_eq(T1 ele1, T2 ele2, string failure){
 }
 
 void test_create_get_value(){
-        string error = "ERROR in test_create()";
-        poly::poly my_poly = poly::poly(6, -2, 4);
+        string error = "ERROR in test_create_get_value()";
+        poly::poly my_poly = poly::poly({6.0, -2.0, 4.0});
         assert_eq(my_poly.get_value(8), 246, error);
         assert_eq(my_poly.get_value(-2.7894), 42.7018, error);
         assert_eq(my_poly.get_value(42.7018), 7214.37, error);
@@ -27,6 +27,7 @@ void test_create_get_value(){
         assert_eq(my_poly.get_value(-3), 183.829, error);
 }
 void test_show_read(){
+        string error = "ERROR in test_create_get_value()";
 
 }
 void test_add(){
