@@ -43,7 +43,7 @@ static poly read(string input);
 */
 
 //Calculate value of polynomial for given argument
-double poly::get_value(double argument){
+double poly::poly::get_value(double argument){
         double result = 0;
         for(size_t i = 0; i < values.size(); i++){
                 result += values[i] * pow(argument, static_cast<int>(i) + base);

@@ -1,9 +1,10 @@
 #include <iostream>
+#include <vector>
 
 #include "./../polynomial-lib/polynomial.hpp"
 
 using namespace std;
-using namespace poly;
+//using namespace poly;
 
 template<typename T1, typename T2>
 bool assert_eq(T1 ele1, T2 ele2, string failure){
