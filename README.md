@@ -5,6 +5,11 @@ Library for working with polynomials writen in C++
 Place polynomial.cpp and polynomial.hpp from polynomial-lib in your projects include catalog.
 After that You can simply do #include "libs/polynomial.hpp" to make library work in Your code.
 
+# Testing the library
+Compiling tests is made by `make`</br>
+Library can be tested using `make test`</br>
+Cleaning after tests is made by `make clean`</br>
+
 # Usage and features
 Create new polynomial</br>
 ```
