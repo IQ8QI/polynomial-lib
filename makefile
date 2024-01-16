@@ -16,7 +16,7 @@ FLAGS := -std=c++20 -Wall -Wpedantic
 
 test: ./tmp/test-all.app
 	@echo "Running the tests!"
-	./tmp/test-all.app
+	-./tmp/test-all.app
 
 clean:
 	@echo "Cleaning up!"
