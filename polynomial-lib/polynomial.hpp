@@ -11,42 +11,137 @@ namespace poly{
         private:
                 int base = 0;
                 vector<double> values;
-        public:
-                //Create polynomial using vector<double>
-                poly(vector<double> arguments);
+                /**
+                 * @brief Set the common base for 2 polies of potentialy
+                 * different bases, polies are edited in the process
+                 * 
+                 * @param p1 1st poly
+                 * @param p2 2nd poly
+                 */
+                static void set_common_base(poly p1, poly p2);
 
-                //Create polynomial with non-zero base and vector
+                /**
+                 * @brief If poly underling vector have zeros in the beggining or ending,
+                 * they are deleted and the base of poly is changed to keep the same meaning of poly.
+                 * 
+                 * @param p1 poly to be balanced
+                 */
+                static void balance_base(poly p1);
+        public:
+                /**
+                 * @brief Construct a new poly object with values of vector and base 0
+                 * 
+                 * @param values values of vector
+                 */
+                poly(vector<double> values);
+
+                /**
+                 * @brief Construct a new poly object with value of vector and base of lowest_power
+                 * 
+                 * @param arguments values of vector
+                 * @param lowest_power base of poly
+                 */
                 poly(vector<double> arguments, int lowest_power);
 
-                //Return text representation of given polynomial
+                /**
+                 * @brief Return text representation of given polynomial
+                 * 
+                 * @return string
+                 */
                 string show();
 
-                //Create polynomial from string formated like result of show()
+                /**
+                 * @brief Create polynomial from string formated like result of show()
+                 * 
+                 * @param input string from witch poly is created
+                 * @return poly resulting poly
+                 */
                 static poly read(string input);
 
-                //Calculate value of polynomial for given argument
+                /**
+                 * @brief Calculate value of polynomial for given X
+                 * 
+                 * @param argument polynomial X value
+                 * @return double
+                 */
                 double get_value(double argument);
 
-                //Add polynomial with something
+                /**
+                 * @brief Add 2 polynomials creating new polynomial
+                 * 
+                 * @param other
+                 * @return poly 
+                 */
                 poly operator+(poly other);
+
+                /**
+                 * @brief Add double to polynomial creating new polynomial
+                 * 
+                 * @param other value to add
+                 * @return poly 
+                 */
                 poly operator+(double other);
 
-                //Subtract poynomial with something
+                /**
+                 * @brief Subtract polynomial with different poynomial creating new poly
+                 * 
+                 * @param other
+                 * @return poly 
+                 */
                 poly operator-(poly other);
+
+                /**
+                 * @brief Subtract double from polynomial creating new poly
+                 * 
+                 * @param other 
+                 * @return poly 
+                 */
                 poly operator-(double other);
 
-                //Multiply poynomial with something
+                /**
+                 * @brief Multiply 2 polys creating new poly
+                 * 
+                 * @param other 
+                 * @return poly 
+                 */
                 poly operator*(poly other);
+
+                /**
+                 * @brief Multiply poly with double creating new poly
+                 * 
+                 * @param other 
+                 * @return poly 
+                 */
                 poly operator*(double other);
 
-                //Divide polynomial with something
+                /**
+                 * @brief Divide poly with other poly creating new poly
+                 * 
+                 * @param other 
+                 * @return poly 
+                 */
                 poly operator/(poly other);
+
+                /**
+                 * @brief Divide poly with double creating new poly
+                 * 
+                 * @param other 
+                 * @return poly 
+                 */
                 poly operator/(double other);
 
-                //Calculate derivative of polynomial
+                /**
+                 * @brief Calculate poly derivative creating new poly
+                 * 
+                 * @return poly 
+                 */
                 poly derivative();
 
-                //Calculate integral of polynomial
+                /**
+                 * @brief Calculate integral of poly creating new poly
+                 * 
+                 * @return poly 
+                 */
                 poly integral();
         };
 }
