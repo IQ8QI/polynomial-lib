@@ -72,18 +72,23 @@ void test_derviative_integral(){
 
 
 int main(){
+        cout << "test_create_get_value()" << endl;
         test_create_get_value();
-        cout << "test_create_get_value() done" << endl;
+        cout << "done" << endl << endl;
 
+        cout << "test_show_read()" << endl;
         test_show_read();
-        cout << "test_show_read() done" << endl;
+        cout << "done" << endl << endl;
 
+        cout << "test_add_subtract()" << endl;
         test_add_subtract();
-        cout << "test_add_subtract() done" << endl;
+        cout << "done" << endl << endl;
 
+        cout << "test_multiply_divide()" << endl;
         test_multiply_divide();
-        cout << "test_multiply_divide() done" << endl;
+        cout << "done" << endl << endl;
 
+        cout << "test_derviative_integral()" << endl;
         test_derviative_integral();
-        cout << "test_derviative_integral() done" << endl;
+        cout << "done" << endl << endl;
 }
