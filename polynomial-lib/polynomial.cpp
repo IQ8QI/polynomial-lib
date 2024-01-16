@@ -46,7 +46,15 @@ void poly::poly::set_common_base(poly& p1, poly& p2){
 }
 
 void poly::poly::balance_base(){
-
+        //Remove zeros at the front and adjust base
+        while(this->values[0] == 0){
+                this->values.erase(this->values.begin());
+                this->base++;
+        }
+        //Remove zeros at the back
+        while(this->values[this->values.size() - 1] == 0){
+                this->values.erase(this->values.end());
+        }
 }
 
 poly::poly::poly(vector<double> arguments){
