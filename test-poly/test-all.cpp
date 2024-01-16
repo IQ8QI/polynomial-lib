@@ -54,6 +54,8 @@ void test_show_read(){
         poly::poly my_poly = poly::poly({6, -2, 48});
         string expected = "6.000000-2.000000*X^(1)+48.000000*X^(2)";
         assert_eq(my_poly.show(), expected, error, test_no);
+        poly::poly other_poly = poly::poly::read(expected);
+        assert_eq(my_poly.get_value(3.5), other_poly.get_value(3.5), error, test_no);
 }
 
 void test_add_subtract(){

@@ -1,21 +1,63 @@
 #include <cmath>
+#include <vector>
 
 #include "polynomial.hpp"
 
 using namespace std;
 
-//Create polynomial using vector<double>
+int poly::poly::get_base(){
+        return base;
+}
+
+void poly::poly::set_base(int new_base){
+        base = new_base;
+}
+
+vector<double> poly::poly::get_vector(){
+        return values;
+}
+
+void poly::poly::set_vector(vector<double> new_vector){
+        values = new_vector;
+}
+
+void poly::poly::set_common_base(poly& p1, poly& p2){
+        int diff = p1.get_base() - p2.get_base();
+        if(diff == 0){
+                return;
+        }
+
+        if(diff > 0){
+                while(diff > 0){
+                        p1.values.insert(p1.values.begin(), 0);
+                        p1.base--;
+                        diff--;
+                }
+                return;
+        }
+        if(diff < 0){
+                while(diff < 0){
+                        p2.values.insert(p2.values.begin(), 0);
+                        p2.base--;
+                        diff++;
+                }
+                return;
+        }
+}
+
+void poly::poly::balance_base(){
+
+}
+
 poly::poly::poly(vector<double> arguments){
         values = arguments;
 }
 
-//Create polynomial with non-zero base and vector
 poly::poly::poly(vector<double> arguments, int lowest_power){
         values = arguments;
         base = lowest_power;
 }
 
-//Return text representation of given polynomial
 string poly::poly::show(){
         string result = "";
         for(size_t i = 0; i < values.size(); i++){
@@ -37,12 +79,11 @@ string poly::poly::show(){
         return result;
 }
 
-/*
-//Create polynomial from string formated like result of show()
-static poly read(string input);
-*/
+poly::poly poly::poly::read(string input){
+        poly result = poly({1, 2, 3});
+        return result;
+}
 
-//Calculate value of polynomial for given argument
 double poly::poly::get_value(double argument){
         double result = 0;
         for(size_t i = 0; i < values.size(); i++){
@@ -51,26 +92,42 @@ double poly::poly::get_value(double argument){
         return result;
 }
 
-/*
-//Add polynomial with something
-poly poly::operator+(poly other);
-poly poly::operator+(double other);
+poly::poly poly::poly::operator+(poly other){
+        
+}
 
-//Subtract poynomial with something
-poly poly::operator-(poly other);
-poly poly::operator-(double other);
+poly::poly poly::poly::operator+(double other){
 
-//Multiply poynomial with something
-poly poly::operator*(poly other);
-poly poly::operator*(double other);
+}
 
-//Divide poynomial with something
-poly poly::operator/(poly other);
-poly poly::operator/(double other);
+poly::poly poly::poly::operator-(poly other){
 
-//Calculate derivative of polynomial
-void poly::derivative();
+}
 
-//Calculate integral of polynomial
-void poly::integral();
-*/
+poly::poly poly::poly::operator-(double other){
+
+}
+
+poly::poly poly::poly::operator*(poly other){
+
+}
+
+poly::poly poly::poly::operator*(double other){
+
+}
+
+poly::poly poly::poly::operator/(poly other){
+
+}
+
+poly::poly poly::poly::operator/(double other){
+
+}
+
+poly::poly poly::poly::derivative(){
+
+}
+
+poly::poly poly::poly::integral(){
+
+}
