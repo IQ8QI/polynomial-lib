@@ -18,16 +18,43 @@ namespace poly{
                  * @param p1 1st poly
                  * @param p2 2nd poly
                  */
-                static void set_common_base(poly p1, poly p2);
+                static void set_common_base(poly& p1, poly& p2);
 
                 /**
                  * @brief If poly underling vector have zeros in the beggining or ending,
                  * they are deleted and the base of poly is changed to keep the same meaning of poly.
                  * 
-                 * @param p1 poly to be balanced
                  */
-                static void balance_base(poly p1);
+                void balance_base();
+
+                /**
+                 * @brief Set the base value
+                 * 
+                 * @param new_base 
+                 */
+                void set_base(int new_base);
+
+                /**
+                 * @brief Set the vector object
+                 * 
+                 * @param new_vector 
+                 */
+                void set_vector(vector<double> new_vector);
         public:
+                /**
+                 * @brief Get the base value
+                 * 
+                 * @return int 
+                 */
+                int get_base();
+
+                /**
+                 * @brief Get the vector object
+                 * 
+                 * @return vector<double> 
+                 */
+                vector<double> get_vector();
+
                 /**
                  * @brief Construct a new poly object with values of vector and base 0
                  * 
