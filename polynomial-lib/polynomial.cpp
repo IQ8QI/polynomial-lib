@@ -1,5 +1,6 @@
 #include <cmath>
 #include <vector>
+#include <stdexcept>
 
 #include "polynomial.hpp"
 
@@ -87,9 +88,25 @@ string poly::poly::show(){
         return result;
 }
 
+bool is_valid_input(const char& c){
+        string valid = ".*-+^()";
+}
+
 poly::poly poly::poly::read(string input){
-        poly result = poly({1, 2, 3});
-        return result;
+        //6.000000-2.000000*X^(1)+48.000000*X^(2)
+        //base 0
+        //6, -2, 48
+        vector<double> readed;
+        int base;
+
+        string buffer = "";
+        for(const char& c : input){
+                if(!is_valid_input(c)){
+                        throw invalid_argument(c);
+                }
+        }
+
+        return poly(readed, base);;
 }
 
 double poly::poly::get_value(double argument){
