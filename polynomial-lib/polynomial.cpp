@@ -60,6 +60,7 @@ void poly::poly::balance_base(){
 
 poly::poly::poly(vector<double> arguments){
         values = arguments;
+        base = 0;
 }
 
 poly::poly::poly(vector<double> arguments, int lowest_power){
@@ -92,7 +93,9 @@ bool is_valid_input(const char& c){
         string valid = ".*-+^()";
 }
 
+// TBD
 poly::poly poly::poly::read(string input){
+/*
         //6.000000-2.000000*X^(1)+48.000000*X^(2)
         //base 0
         //6, -2, 48
@@ -106,7 +109,9 @@ poly::poly poly::poly::read(string input){
                 }
         }
 
-        return poly(readed, base);;
+        return poly(readed, base);
+*/
+        return poly(vector<double>{1});
 }
 
 double poly::poly::get_value(double argument){

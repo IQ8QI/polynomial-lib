@@ -49,7 +49,7 @@ namespace poly{
                 int get_base();
 
                 /**
-                 * @brief Get the vector object
+                 * @brief Get the vector of values
                  * 
                  * @return vector<double> 
                  */
